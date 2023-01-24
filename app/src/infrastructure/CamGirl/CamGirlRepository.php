@@ -16,7 +16,7 @@ class CamGirlRepository implements CamGirlsRepositoryInterface
         $response = Cache::get('CamGirls', function () {
             try{
                 $response = Http::get('http://webcams.cumlouder.com/feed/webcams/online/61/1/');
-                //Cache::put('CamGirls', '', now()->addMinutes(15));
+                Cache::put('CamGirls', '', now()->addMinutes(15));
                 return $response;
             }catch (Exception $e){
 

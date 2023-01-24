@@ -47,7 +47,7 @@
             <div class="chica">
         @endswitch
 
-            <a class="link" href={{ url("http://webcams.cumlouder.com/joinmb/cumlouder/" . urlencode($CamGirl->wbmerNick()) . "/?nats=" . env('CODIGO_TRACK')) }} title="">
+            <a class="link" href={{ url("http://webcams.cumlouder.com/joinmb/cumlouder/" . urlencode($CamGirl->wbmerNick()) . "/?nats=" . env('CODIGO_TRACKING')) }} title="">
                 <span class="thumb"><img src="images/thumb-01.jpg" width="175" height="150" alt="" title="" /></span>
                 <span class="nombre-chica"> <span class="ico-online"></span>{{ $CamGirl->wbmerNick() }}</span>
                 <span id="favorito" class="ico-favorito" ></span>
