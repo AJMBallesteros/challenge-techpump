@@ -14,19 +14,19 @@ class CamGirlController
         $this->retrieveCamGirls = $retrieveCamGirls;
     }
 
-    public function babosas(){
-        $camGirls = $this->retrieveCamGirls();
-        return view('babosas.babosas', ['CamGirls' => $camGirls]);
-    }
-    public function conejox()
-    {
-        $camGirls = $this->retrieveCamGirls();
-        return view('conejox.conejox', ['CamGirls' => $camGirls]);
-    }
+    public function index(){
 
-    public function cerdas(){
+        $affiliate = 'conejox.com';
+        $_SERVER['HTTP_HOST'] = $affiliate;
+
         $camGirls = $this->retrieveCamGirls();
-        return view('cerdas.cerdas', ['CamGirls' => $camGirls]);
+
+        return match ($_SERVER['HTTP_HOST']) {
+            'babosas.com' => view('babosas.babosas', ['CamGirls' => $camGirls]),
+            'cerdas.com' => view('cerdas.cerdas', ['CamGirls' => $camGirls]),
+            'conejox.com' => view('conejox.conejox', ['CamGirls' => $camGirls]),
+            default => null,
+        };
     }
 
     public function retrieveCamGirls()

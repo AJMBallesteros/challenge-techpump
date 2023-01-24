@@ -14,23 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::domain('babosas.com')->group(function () {
-    Route::get('/');
-});
-
-Route::domain('cerdas')->group(function () {
-    Route::get('/');
-});
-
-Route::domain('babosas')->group(function () {
-    Route::get('/');
-});
-
-Route::domain('conejox.com')->group(function () {
-    Route::get('/');
-});
-
-
 Route::get('/cerdas', [CamGirlController::class, 'cerdas'])->name('cerdas');
 Route::get('/babosas', [CamGirlController::class, 'babosas'])->name('babosas');
 Route::get('/conejox', [CamGirlController::class, 'conejox'])->name('conejox');
@@ -38,3 +21,4 @@ Route::get('/conejox', [CamGirlController::class, 'conejox'])->name('conejox');
 
 Route::get('/retrieve-cam-girls', [CamGirlController::class, 'retrieveCamGirls'])->name('girls.retrieve');
 
+Route::get('/',[CamGirlController::class, 'index'])->name('girls.home');
