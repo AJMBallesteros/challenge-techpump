@@ -2,8 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\src\domain\Affiliate;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\src\domain\Affiliate\Affiliate;
 use Illuminate\Database\Seeder;
 
 class AffiliatesSeeder extends Seeder
@@ -29,7 +28,7 @@ class AffiliatesSeeder extends Seeder
             ->setUrlAttribute('http://conejox.com')
             ->setNatsWebcamAttribute('conejox12345')
             ->setNatsWebAttribute('conejox67890')
-            ->setAssetsAttribute('conejox')
+            ->setAssetsAttribute('conejox.com')
             ->setGoogleAnalyticsAttribute('AU-2XXXX');
         $affiliate->save();
 
@@ -38,7 +37,7 @@ class AffiliatesSeeder extends Seeder
             ->setUrlAttribute('http://cerdas.com')
             ->setNatsWebcamAttribute('cerdas12345')
             ->setNatsWebAttribute('cerdas67890')
-            ->setAssetsAttribute('cerdas')
+            ->setAssetsAttribute('cerdas.com')
             ->setGoogleAnalyticsAttribute('AU-3XXXX');
         $affiliate->save();
     }

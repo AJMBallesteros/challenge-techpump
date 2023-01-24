@@ -1,6 +1,6 @@
 <?php
 
-use App\src\infrastructure\CamGirlController;
+use App\src\infrastructure\CamGirl\CamGirlController;
 use Illuminate\Support\Facades\Route;
 
 /*
