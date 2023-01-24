@@ -11,6 +11,7 @@ class Affiliate extends Model
 
     protected $table = 'affiliates';
     protected $fillable = ['web_name', 'url', 'nats_webcam','nats_web', 'assets', 'google_analytics'];
+    public $timestamps = false;
 
     public function getWebNameAttribute($value): string
     {
