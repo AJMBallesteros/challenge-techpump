@@ -2,30 +2,25 @@
 
 namespace App\src\infrastructure\CamGirl;
 
-use App\src\application\Affiliate\GetAffiliate;
+use App\src\application\Affiliate\GetAffiliates;
 use App\src\application\CamGirl\RetrieveCamGirls;
-use App\src\domain\Affiliate\Affiliate;
 
 class CamGirlController
 {
     private RetrieveCamGirls $retrieveCamGirls;
-    private GetAffiliate $getAffiliate;
+    private GetAffiliates $getAffiliates;
 
     public function __construct(
         RetrieveCamGirls $retrieveCamGirls,
-        GetAffiliate $getAffiliate
+        GetAffiliates $getAffiliates
     ){
         $this->retrieveCamGirls = $retrieveCamGirls;
-        $this->getAffiliate = $getAffiliate;
+        $this->getAffiliates = $getAffiliates;
     }
 
     public function index(){
         $camGirls = $this->retrieveCamGirls->execute();
-        $affiliate = $this->getAffiliate->execute();
-
-        if($affiliate === null){
-
-        }
+        $affiliate = $this->getAffiliates->findByHost();
 
         return view('webcams', ['affiliate' => $affiliate, 'CamGirls' => $camGirls]);
     }

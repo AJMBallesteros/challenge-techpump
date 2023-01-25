@@ -14,8 +14,8 @@ class GetAffiliates
         $this->affiliatesRepository = $affiliatesRepository;
     }
 
-    public function execute(string $url)
+    public function findByHost()
     {
-        return $this->affiliatesRepository->getAll();
+        return $this->affiliatesRepository->findByHost();
     }
 }
