@@ -4,6 +4,7 @@ namespace App\src\infrastructure\CamGirl;
 
 use App\src\application\Affiliate\GetAffiliates;
 use App\src\application\CamGirl\RetrieveCamGirls;
+use Illuminate\Database\Eloquent\Collection;
 
 class CamGirlController
 {
@@ -24,7 +25,7 @@ class CamGirlController
 
         return view('webcams', ['affiliate' => $affiliate, 'CamGirls' => $camGirls]);
     }
-    public function retrieveCamGirls()
+    public function retrieveCamGirls(): Collection
     {
         $camGirls = $this->retrieveCamGirls->execute();
         return $camGirls;

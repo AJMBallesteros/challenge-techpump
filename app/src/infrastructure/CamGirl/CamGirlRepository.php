@@ -8,12 +8,13 @@ use App\src\domain\CamGirl\CamGirl;
 use App\src\domain\CamGirl\CamGirlsRepositoryInterface;
 use Exception;
 use GuzzleHttp\Exception\RequestException;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
 class CamGirlRepository implements CamGirlsRepositoryInterface
 {
-    public function getAllCams()
+    public function getAllCams(): Collection
     {
         $webCamList = Cache::get('CamGirls', function () {
             try{
@@ -29,7 +30,7 @@ class CamGirlRepository implements CamGirlsRepositoryInterface
             }
         });
 
-        if(sizeof($webCamList) <= 0) {
+        if(count($webCamList) <= 0) {
             throw new WebCamListIsEmptyException();
         }
 
