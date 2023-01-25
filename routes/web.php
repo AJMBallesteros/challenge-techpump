@@ -14,11 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/cerdas', [CamGirlController::class, 'cerdas'])->name('cerdas');
-Route::get('/babosas', [CamGirlController::class, 'babosas'])->name('babosas');
-Route::get('/conejox', [CamGirlController::class, 'conejox'])->name('conejox');
-
-
+Route::get('/',[CamGirlController::class, 'index'])->name('girls.home');
 Route::get('/retrieve-cam-girls', [CamGirlController::class, 'retrieveCamGirls'])->name('girls.retrieve');
 
-Route::get('/',[CamGirlController::class, 'index'])->name('girls.home');

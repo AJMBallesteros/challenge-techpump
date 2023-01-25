@@ -4,7 +4,7 @@ namespace App\src\application\Affiliate;
 
 use App\src\domain\Affiliate\AffiliatesRepositoryInterface;
 
-class GetAffiliate
+class GetAffiliates
 {
     private AffiliatesRepositoryInterface $affiliatesRepository;
 
@@ -14,8 +14,8 @@ class GetAffiliate
         $this->affiliatesRepository = $affiliatesRepository;
     }
 
-    public function execute()
+    public function execute(string $url)
     {
-        return $this->affiliatesRepository->findByHost();
+        return $this->affiliatesRepository->getAll();
     }
 }

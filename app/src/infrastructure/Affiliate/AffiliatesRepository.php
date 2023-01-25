@@ -8,12 +8,17 @@ use Exception;
 
 class AffiliatesRepository implements AffiliatesRepositoryInterface
 {
-    public function findByUrl(string $url): Affiliate
+    public function getAll()
     {
-            try{
-                return Affiliate::where('url', '=', $url)->first();
-            }catch (Exception $e){
 
-            }
+    }
+
+    public function findByHost()
+    {
+        $affiliate = Affiliate::where('url', sprintf('http://%s',$_SERVER['HTTP_HOST']))
+            ->orWhere('url', sprintf('https://%s',$_SERVER['HTTP_HOST']))
+            ->first();
+
+        return $affiliate;
     }
 }

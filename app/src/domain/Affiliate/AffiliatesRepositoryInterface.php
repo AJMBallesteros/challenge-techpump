@@ -4,5 +4,6 @@ namespace App\src\domain\Affiliate;
 
 interface AffiliatesRepositoryInterface
 {
-    public function findByUrl(string $url);
+    public function findByHost();
+    public function getAll();
 }

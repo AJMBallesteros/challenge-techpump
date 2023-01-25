@@ -35,6 +35,12 @@ class Affiliate extends Model
         return $this;
     }
 
+    public function urlHost()
+    {
+        $url = parse_url($this->attributes['url']);
+        return $url['host'];
+    }
+
     public function natsWebcam(): string
     {
         return $this->attributes['nats_webcam'];

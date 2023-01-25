@@ -4,6 +4,7 @@ namespace App\src\infrastructure\CamGirl;
 
 use App\src\application\Affiliate\GetAffiliate;
 use App\src\application\CamGirl\RetrieveCamGirls;
+use App\src\domain\Affiliate\Affiliate;
 
 class CamGirlController
 {
@@ -19,16 +20,12 @@ class CamGirlController
     }
 
     public function index(){
-        $_SERVER['HTTP_HOST'] = 'babosas.com';
+        $camGirls = $this->retrieveCamGirls->execute();
+        $affiliate = $this->getAffiliate->execute();
 
-        $camGirls = $this->retrieveCamGirls();
+        if($affiliate === null){
 
-        $affiliate = match ($_SERVER['HTTP_HOST']) {
-            'babosas.com' => $this->getAffiliate->execute('http://babosas.com'),
-            'cerdas.com' => $this->getAffiliate->execute('http://cerdas.com'),
-            'conejox.com' => $this->getAffiliate->execute('http://conejox.com'),
-            default => null,
-        };
+        }
 
         return view('webcams', ['affiliate' => $affiliate, 'CamGirls' => $camGirls]);
     }
