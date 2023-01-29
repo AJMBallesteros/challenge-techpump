@@ -8,7 +8,9 @@ class CamGirlMother
 {
     public static function dummy(): CamGirl
     {
-        return new CamGirl();
+        $camGirl = new CamGirl();
+        $camGirl->setWbmerNick('CordobesaCaliente69');
+        return $camGirl;
     }
 
     public static function CamGirlAsJson(): string

@@ -22,6 +22,6 @@ class CamGirl extends Model
      */
     public function setWbmerNick(string $wbmerNick): void
     {
-        $this->wbmerNick = $wbmerNick;
+        $this->attributes['wbmerNick'] = $wbmerNick;
     }
 }

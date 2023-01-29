@@ -4,8 +4,8 @@ namespace App\src\infrastructure\CamGirl;
 
 use App\src\application\CamGirl\Exception\CumlouderIsDownException;
 use App\src\application\CamGirl\Exception\WebCamListIsEmptyException;
-use App\src\domain\CamGirl\CamGirl;
 use App\src\domain\CamGirl\CamGirlsRepositoryInterface;
+use App\src\domain\CamGirl\CamGirlTransformer;
 use Exception;
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Database\Eloquent\Collection;
@@ -34,7 +34,6 @@ class CamGirlRepository implements CamGirlsRepositoryInterface
             throw new WebCamListIsEmptyException();
         }
 
-        $dataCollection = CamGirl::hydrate($webCamList);
-        return $dataCollection;
+        return CamGirlTransformer::JsonToCollection($webCamList);
     }
 }
