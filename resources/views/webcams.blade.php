@@ -36,11 +36,11 @@
         @switch($key)
             @case(5)
             @case(29)
-            @case(53):
+            @case(53)
                 <div class="chica chica-grande">
                 @break
             @case(20)
-            @case(43):
+            @case(43)
                 <div class="chica chica-grande grande-derecha">
                 @break
             @default
