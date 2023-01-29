@@ -54,7 +54,7 @@ class Affiliate extends Model
 
     public function natsWeb(): string
     {
-        return $this->natsWeb();
+        return $this->attributes['nats_web'];
     }
 
     public function setNatsWebAttribute($value)

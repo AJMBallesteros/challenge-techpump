@@ -8,7 +8,8 @@ use App\src\domain\Affiliate\Exception\AffiliateNotFoundByHostException;
 use Exception;
 
 class AffiliatesRepository implements AffiliatesRepositoryInterface
-{public function findByHost(): Affiliate
+{
+    public function findByHost(): Affiliate
     {
         try {
             $affiliate = Affiliate::where('url', sprintf('http://%s',$_SERVER['HTTP_HOST']))
