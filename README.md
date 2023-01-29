@@ -66,7 +66,7 @@ Veremos como el CSS va cambiando en función del dominio utilizado.
 
 Como posible solución en sistemas Linux podemos usar en la raiz del proyecto:
 ```code
-sudo chown -R :$USER storage
+sudo chown -R 33:33 storage
 ```
 
 
